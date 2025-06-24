@@ -402,48 +402,42 @@
       </tr>
       <tr>
         <td>Best Case</td>
-        <td class="time-best">11.5 days</td>
-        <td class="time-best">2 weeks</td>
+        <td class="time-best">5.125 days</td>
+        <td class="time-best">1 week</td>
       </tr>
       <tr>
         <td>Average Case</td>
-        <td class="time-avg">21 days</td>
-        <td class="time-avg">4 weeks</td>
+        <td class="time-avg">10.25 days</td>
+        <td class="time-avg">2 weeks</td>
       </tr>
       <tr>
         <td>Worst Case</td>
-        <td class="time-worst">38 days</td>
-        <td class="time-worst">8 weeks</td>
+        <td class="time-worst">15 days</td>
+        <td class="time-worst">3 weeks</td>
       </tr>
     </table>
     <div class="estimation-notes">
-      <p><strong>Note:</strong></p>
+      <p><strong>Note:</strong> Time measurement: 1 day = 8 hours, 5 working days = 1 week</p>
       <ul>
         <li>Best case scenario:
           <ul>
-            <li>2 days per unsupported element for analysis, implementation, and testing</li>
-            <li>0.25 day per unsupported dataweave expression for translation and validation</li>
+            <li>1.0 day per each unsupported element type for analysis, implementation, and testing</li>
+            <li>30.0 minutes per each unsupported dataweave expression for translation and validation</li>
             <li>Assumes minimal complexity and straightforward implementations</li>
           </ul>
         </li>
         <li>Average case scenario:
           <ul>
-            <li>4 days per unsupported element for analysis, implementation, and testing</li>
-            <li>0.5 day per unsupported dataweave expression including edge cases</li>
+            <li>2.0 days per each unsupported element type for analysis, implementation, and testing</li>
+            <li>1.0 hour per each unsupported dataweave expression including edge cases</li>
             <li>Includes time for code review and integration testing</li>
           </ul>
         </li>
         <li>Worst case scenario:
           <ul>
-            <li>7 days per unsupported element due to complex dependencies and edge cases</li>
-            <li>1.5 days per unsupported dataweave expression with complex transformations</li>
+            <li>3.0 days per each unsupported element type due to complex dependencies and edge cases</li>
+            <li>2.0 hours per each unsupported dataweave expression with complex transformations</li>
             <li>Accounts for additional requirements, debugging, and performance optimization</li>
-          </ul>
-        </li>
-        <li>Project scope:
-          <ul>
-            <li>Total distinct unsupported elements: 5</li>
-            <li>Total DataWeave expressions requiring manual conversion: 2</li>
           </ul>
         </li>
       </ul>
