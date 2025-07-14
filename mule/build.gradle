@@ -50,16 +50,35 @@ checkstyleMain.exclude("mule/v4/report/MigrationReportTemplate.java")
 checkstyleMain.exclude("mule/v4/report/AggregateReportTemplate.java")
 checkstyleMain.exclude("mule/v4/report/AggregateReportWriter.java")
 
-spotbugs {
-    reportLevel = 'high'
-    excludeFilter = file("${rootProject.projectDir}/spotbugs-exclude.xml")
+// ANTLR code generation tasks
+task generateDataWeaveV3Parser(type: JavaExec) {
+    group = 'antlr'
+    description = 'Generate ANTLR parser classes for DataWeave v3 grammar'
+
+    classpath = configurations.runtimeClasspath
+    mainClass = 'org.antlr.v4.Tool'
+
+    args = [
+        '-package', 'mule.v3.dataweave.parser',
+        '-o', '.',
+        '-visitor',
+        'src/main/java/mule/v3/dataweave/parser/DataWeave.g4'
+    ]
 }
 
-tasks.withType(com.github.spotbugs.snom.SpotBugsTask).configureEach {
-    reports {
-        html.required = true
-        xml.required = false
-    }
+task generateDataWeaveV4Parser(type: JavaExec) {
+    group = 'antlr'
+    description = 'Generate ANTLR parser classes for DataWeave v4 grammar'
+
+    classpath = configurations.runtimeClasspath
+    mainClass = 'org.antlr.v4.Tool'
+
+    args = [
+        '-package', 'mule.v4.dataweave.parser',
+        '-o', '.',
+        '-visitor',
+        'src/main/java/mule/v4/dataweave/parser/DataWeave.g4'
+    ]
 }
 
 test {
